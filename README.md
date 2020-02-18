@@ -26,6 +26,7 @@ django-admin startproject mysite
 cd mysite
 ```
 
+#### テスト用に `Bash` を別途起動
 
 - 最初のテスト（Red）
     ```
@@ -51,7 +52,11 @@ cd mysite
 
     ============================= 1 passed in 22.19s ==============================
     ```
-    - ローカルWebサーバで、djangoスタートページが起動。(Green)
+
+    - ローカルWebサーバで、djangoトップページが起動。(Green)
 
     ![django](https://user-images.githubusercontent.com/33124627/74706776-30a76600-525b-11ea-80ce-e85dfa17bbb1.png)
+
+    - 以降、`ptw test_function.py` で自動テストを走らせながら開発。
+---
 
