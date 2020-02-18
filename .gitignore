@@ -1,2 +1,9 @@
-Pipfile.lock
+.vscode
 memo*
+
+Pipfile.lock
+
+*/*/settings.py
+
+.pytest_cache
+*/geckodriver.log
