@@ -27,11 +27,12 @@ def test_browser_run_init(browser_run):
 @pytest.mark.parametrize(
     "url", [
         ('http://127.0.0.1:8000/myapp/hello'),
-        ('http://127.0.0.1:8000/myapp/temp')
+        ('http://127.0.0.1:8000/myapp/temp'),
+        ('http://127.0.0.1:8000/myapp/query/?user=IM&message=Hello.')
     ]
 )
 def test_browser_views_init(browser_run, url):
     driver.get(url)
-    # assert "Hello Red" in driver.page_source
-    assert "Hello World" in driver.page_source
+    # assert "Red" in driver.page_source
+    assert "Hello" in driver.page_source
 

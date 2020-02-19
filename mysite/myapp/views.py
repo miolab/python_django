@@ -10,3 +10,10 @@ def temp(request):
         'value_datetime': datetime.date.today()
         }
     )
+
+def query_str(request):
+    return render(request, 'query.html', {
+        'test_user': request.GET['user'],
+        'test_message': request.GET['message']
+        }
+    )
