@@ -24,6 +24,7 @@ def test_browser_run_init(browser_run):
     assert "Django" in driver.title
 
 
+@pytest.mark.skip(reason = "confirmed")
 @pytest.mark.parametrize(
     "url", [
         ('http://127.0.0.1:8000/myapp/hello'),
@@ -35,4 +36,14 @@ def test_browser_views_init(browser_run, url):
     driver.get(url)
     # assert "Red" in driver.page_source
     assert "Hello" in driver.page_source
+
+
+@pytest.mark.parametrize(
+    "url", [
+        ('http://127.0.0.1:8000/admin')
+    ]
+)
+def test_admin(browser_run, url):
+    driver.get(url)
+    assert "Username" in driver.page_source
 
