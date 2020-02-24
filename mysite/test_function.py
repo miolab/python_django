@@ -38,6 +38,7 @@ def test_browser_views_init(browser_run, url):
     assert "Hello" in driver.page_source
 
 
+@pytest.mark.skip(reason = "confirmed")
 @pytest.mark.parametrize(
     "url", [
         ('http://127.0.0.1:8000/admin')
@@ -46,4 +47,17 @@ def test_browser_views_init(browser_run, url):
 def test_admin(browser_run, url):
     driver.get(url)
     assert "Username" in driver.page_source
+
+
+@pytest.mark.parametrize(
+    "url", [
+        ('http://127.0.0.1:8000/myapp/article'),
+        ('http://127.0.0.1:8000/myapp/article/add'),
+        ('http://127.0.0.1:8000/myapp/article/modify/1'),
+        ('http://127.0.0.1:8000/myapp/article/del/1')
+    ]
+)
+def test_admin(browser_run, url):
+    driver.get(url)
+    assert "投稿記事" in driver.page_source
 
