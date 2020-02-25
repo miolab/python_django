@@ -1,4 +1,4 @@
-# python_django
+# Python Django CRUD
 
 django開発用テンプレート
 
