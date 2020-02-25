@@ -1,13 +1,24 @@
 # python_django
 
+django開発用テンプレート
+
+- 機能要件
+  - CRUD実装
+  - API機能
+- 非機能要件
+  - XSS、SQLインジェクション等へのセキュリティ対策
+- テスト（開発）
+  - テスト自動化
+
 
 ## 💻 開発環境
 
 - pipenv
-- Python 3.8
-- django 3.0.3
-- selenium 3.141.0
-  - geckordriver 0.26.0 (Win64)
+- Python (3.8)
+- django  (3.0.3)
+- django-bootstrap4 (1.1.1)
+- selenium (3.141.0)
+  - geckordriver (0.26.0 / Win64)
 - pytest
   - pytest-watch
 - VSCode
@@ -58,5 +69,20 @@ cd mysite
     ![django](https://user-images.githubusercontent.com/33124627/74706776-30a76600-525b-11ea-80ce-e85dfa17bbb1.png)
 
     - 以降、`ptw test_function.py` で自動テストを走らせながら開発。
+
+
 ---
 
+
+## (※以降、on going)
+
+  ![ichiran](https://user-images.githubusercontent.com/33124627/75225335-bdb76580-57ed-11ea-82aa-36919d9af6f0.png)
+
+  ![add](https://user-images.githubusercontent.com/33124627/75225458-fc4d2000-57ed-11ea-847e-410c749c2b67.png)
+
+
+## 💻 アプリケーション作成
+
+```
+python manage.py startapp myapp
+```
