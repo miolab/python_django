@@ -72,5 +72,28 @@ def test_admin(browser_run, url):
 )
 def test_crud(browser_run, url):
     driver.get(url)
-    assert "投稿記事" in driver.page_source
+    assert "投稿記事の一覧" in driver.page_source
+
+    add_btn = driver.find_element_by_id("addArticle")
+    add_btn.click()
+    time.sleep(0.1)
+    assert "投稿記事の編集" in driver.page_source
+
+    # // Test // Create
+    input_title = driver.find_element_by_id("id_title_submit")
+    input_title.send_keys("自動投稿テスト")
+    input_text = driver.find_element_by_id("id_text_submit")
+    input_text.send_keys("自動投稿テスト")
+    time.sleep(0.1)
+    submit_btn = driver.find_element_by_id("submitArticle")
+    submit_btn.click()
+    time.sleep(1)
+    assert "自動投稿テスト" in driver.page_source
+
+    # // Test // Update
+
+
+    # // Test // Delete
+
+
 

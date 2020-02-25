@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block title %}投稿記事の編集{% endblock title %}
+
+{% block content %}
+    <h1 class="border-bottom my-4">投稿記事の編集</h1>
+
+    {% if article_id %}
+    <form method="post" action="{% url 'myapp:article_modify' article_id=article_id %}">
+    {% else %}
+    <form method="post" action="{% url 'myapp:article_add' %}">
+    {% endif %}
+        {% csrf_token %}
+        {% bootstrap_form form layout='horizontal' %}
+        <div class="form-group row">
+            <div class="col-md-6">
+                <button type="submit" id="submitArticle" class="btn btn-success">送信する</button>
+            </div>
+        </div>
+    </form>
+
+    <a href="{% url 'myapp:article_list' %}" class="btn btn-secondary">戻る</a>
+{% endblock content %}
