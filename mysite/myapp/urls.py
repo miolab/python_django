@@ -3,11 +3,13 @@ from . import views
 
 
 app_name = 'myapp'
+
 urlpatterns = [
     # // test function //
-    path('hello/', views.hello_world),
-    path('temp/', views.temp),
-    path('query/', views.query_str),
+    # path('hello/', views.hello_world),
+    # path('temp/', views.temp),
+    # path('query/', views.query_str),
+
     # // CRUD //
     path(
         'article/',

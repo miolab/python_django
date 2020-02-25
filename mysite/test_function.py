@@ -49,6 +49,7 @@ def test_admin(browser_run, url):
     assert "Username" in driver.page_source
 
 
+@pytest.mark.skip(reason = "confirmed")
 @pytest.mark.parametrize(
     "url", [
         ('http://127.0.0.1:8000/myapp/article'),
@@ -58,6 +59,18 @@ def test_admin(browser_run, url):
     ]
 )
 def test_admin(browser_run, url):
+    driver.get(url)
+    assert "投稿記事" in driver.page_source
+
+
+
+
+@pytest.mark.parametrize(
+    "url", [
+        ('http://127.0.0.1:8000/myapp/article'),
+    ]
+)
+def test_crud(browser_run, url):
     driver.get(url)
     assert "投稿記事" in driver.page_source
 
