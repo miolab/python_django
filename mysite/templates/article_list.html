@@ -4,24 +4,24 @@
 {% block title %}投稿記事の一覧{% endblock title %}
 
 {% block content %}
-    <h1>投稿記事の一覧</h1>
-    <a href="{% url 'myapp:article_add' %}">追加</a>
-    <table>
+    <h1 class="border-bottom my-4">投稿記事の一覧</h1>
+    <a href="{% url 'myapp:article_add' %}" class="btn btn-info mb-4">追加</a>
+    <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>タイトル</th>
-                <th>操作</th>
+                <th scope="col">ID</th>
+                <th scope="col">タイトル</th>
+                <th scope="col">操作</th>
             </tr>
         </thead>
         <tbody>
             {% for article in articles %}
             <tr>
-                <th>{{ article.id }}</th>
+                <th scope="row">{{ article.id }}</th>
                 <td>{{ article.title_submit }}</td>
                 <td>
-                    <a href="{% url 'myapp:article_modify' article_id=article.id %}">修正</a>
-                    <a href="{% url 'myapp:article_del' article_id=article.id %}">削除</a>
+                    <a href="{% url 'myapp:article_modify' article_id=article.id %}" class="btn btn-sm btn-success mx-1">修正</a>
+                    <a href="{% url 'myapp:article_del' article_id=article.id %}" class="btn btn-sm btn-danger mx-1">削除</a>
                 </td>
             </tr>
             {% endfor %}
