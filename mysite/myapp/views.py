@@ -34,7 +34,6 @@ def article_list(request):
 
 
 def article_edit(request, article_id=None):
-    # return HttpResponse('投稿記事の編集')
     if article_id:
         article = get_object_or_404(Article, pk=article_id)
     else:
@@ -57,4 +56,6 @@ def article_edit(request, article_id=None):
 
 
 def article_del(request, article_id):
-    return HttpResponse('投稿記事の削除')
+    article = get_object_or_404(Article, pk=article_id)
+    article.delete()
+    return redirect('myapp:article_list')
