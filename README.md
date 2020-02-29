@@ -21,7 +21,7 @@ django開発用テンプレート
   - geckordriver (0.26.0 / Win64)
 - pytest
   - pytest-watch
-- VSCode
+- Visual Studio Code
 
 
 ## 💻 プロジェクト作成～テスト準備
@@ -39,12 +39,13 @@ cd mysite
 
 #### テスト用に `Bash` を別途起動
 
+テストは`test_function.py`に書いていく。
+
 - 最初のテスト（Red）
     ```
     pytest test_function.py
     ```
     - Webサーバ起動前のため、エラー。(Red)
-
 
 - 最初のテスト（Green）
     ```
@@ -76,13 +77,20 @@ cd mysite
 
 ## (※以降、on going)
 
-  ![ichiran](https://user-images.githubusercontent.com/33124627/75225335-bdb76580-57ed-11ea-82aa-36919d9af6f0.png)
+  ![Image_ichiran](https://user-images.githubusercontent.com/33124627/75225335-bdb76580-57ed-11ea-82aa-36919d9af6f0.png)
 
-  ![add](https://user-images.githubusercontent.com/33124627/75225458-fc4d2000-57ed-11ea-847e-410c749c2b67.png)
+  ![Image_add](https://user-images.githubusercontent.com/33124627/75225458-fc4d2000-57ed-11ea-847e-410c749c2b67.png)
 
+---
 
 ## 💻 アプリケーション作成
 
-```
-python manage.py startapp myapp
-```
+- CRUD部分　`myapp/`
+  ```
+  python manage.py startapp myapp
+  ```
+
+- API部分　`api/`
+  ```
+  python manage.py startapp api
+  ```
