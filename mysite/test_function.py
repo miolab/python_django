@@ -64,8 +64,7 @@ def test_admin(browser_run, url):
     assert "投稿記事" in driver.page_source
 
 
-
-
+@pytest.mark.skip(reason = "confirmed")
 @pytest.mark.parametrize(
     "url", [
         ('http://127.0.0.1:8000/myapp/article'),
@@ -117,5 +116,20 @@ def test_crud(browser_run, url):
 
 
     # // Test // Delete
+    # Skip
 
 
+@pytest.mark.parametrize(
+    "url", [
+        ('http://127.0.0.1:8000/api/v1/articles'),
+    ]
+)
+def test_api(browser_run, url):
+    # // Test // Read
+    driver.get(url)
+    driver.implicitly_wait(5)
+    assert 'articles' in driver.page_source
+    assert 'id' in driver.page_source
+    assert 'Title' in driver.page_source
+    assert 'Text' in driver.page_source
+    assert 'テスト' in driver.page_source
