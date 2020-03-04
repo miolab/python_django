@@ -75,23 +75,20 @@ django開発用テンプレート
 
 ---
 
+## 💻 アプリケーション作成
 
-## (※以降、on going)
+- CRUD部分　`myapp/`
+
+  ```
+  python manage.py startapp myapp
+  ```
 
   ![Image_ichiran](https://user-images.githubusercontent.com/33124627/75225335-bdb76580-57ed-11ea-82aa-36919d9af6f0.png)
 
   ![Image_add](https://user-images.githubusercontent.com/33124627/75225458-fc4d2000-57ed-11ea-847e-410c749c2b67.png)
 
----
-
-## 💻 アプリケーション作成
-
-- CRUD部分　`myapp/`
-  ```
-  python manage.py startapp myapp
-  ```
-
 - API部分　`api/`
+
   ```
   python manage.py startapp api
   ```
